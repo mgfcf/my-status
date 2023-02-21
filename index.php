@@ -22,7 +22,7 @@ function getTime()
     $file = fopen($FILENAME, "r");
     $time = fread($file, filesize($FILENAME));
     fclose($file);
-    return $time;
+    return (int)$time;
 }
 
 
@@ -37,7 +37,7 @@ if (isset($_GET['secret']) && $_GET['secret'] == $SECRET_KEY) {
 // Current status requested
 $last_activity = getTime();
 $response = array(
-    "last_activity" => date(DATE_ATOM, $last_activity)
+    "last_activity" => $last_activity
 );
 
 // Estimate current activity
