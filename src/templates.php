@@ -59,7 +59,7 @@ class Templates
         $sleepingTemplate = new Template();
         $sleepingTemplate->title = "Sleeping";
         $sleepingTemplate->description = "";
-        $sleepingTemplate->expectedDuration = 0;
+        $sleepingTemplate->expectedDuration = 60 * 60 * 8; // 8 hours
         $sleepingTemplate->available = false;
         $sleepingTemplate->working = false;
         $sleepingTemplate->priority = 10;
