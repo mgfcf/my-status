@@ -111,6 +111,11 @@ class Template
 
     public function isValidFor(Activity $activity): bool
     {
+        // Is any trigger active?
+        if (!$this->triggerOnlyOnEmptyTitle && !$this->triggerAfterTimeout) {
+            return false;
+        }
+
         if ($this->triggerOnlyOnEmptyTitle && $activity->title != "") {
             return false;
         }
